@@ -40,6 +40,12 @@ public class UserController {
         return userService.signup(modelMapper.map(user, User.class));
     }
 
+    @GetMapping(value = "/{username}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public UserResponseDTO search(@PathVariable String username) {
+        return modelMapper.map(userService.search(username), UserResponseDTO.class);
+    }
+
     @DeleteMapping(value = "/{username}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String delete(@PathVariable String username) {

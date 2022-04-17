@@ -48,6 +48,14 @@ public class UserService {
         }
     }
 
+    public User search(String username) {
+        User user = userRepository.findByUsername(username);
+        if (user == null) {
+            throw new ExceptionWithHttpStatus("User not found.", HttpStatus.NOT_FOUND);
+        }
+        return user;
+    }
+
     public void delete(String username) {
         userRepository.deleteByUsername(username);
     }
