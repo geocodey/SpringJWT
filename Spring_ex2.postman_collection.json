@@ -1,0 +1,246 @@
+{
+	"info": {
+		"_postman_id": "6aa214b1-fe24-4ef5-90ca-93183734e3a6",
+		"name": "Spring ex2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getLanguages",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"languages\": {\r\n        \"Arabic\": \"ar\",\r\n        \"Chinese\": \"zh\",\r\n        \"Dutch\": \"nl\",\r\n        \"English\": \"en\",\r\n        \"Finnish\": \"fi\",\r\n        \"French\": \"fr\",\r\n        \"German\": \"de\",\r\n        \"Hindi\": \"hi\",\r\n        \"Italian\": \"it\",\r\n        \"Japanese\": \"ja\",\r\n        \"Korean\": \"ko\",\r\n        \"Malay\": \"msa\",\r\n        \"Portuguese\": \"pt\",\r\n        \"Russian\": \"ru\",\r\n        \"Spanish\": \"es\",\r\n        \"Vietnamise\": \"vi\"\r\n    },\r\n    \"description\": \"available languages followed by query code\",\r\n    \"status\": \"ok\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/lang",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"lang"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getNews",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiYXV0aCI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaWF0IjoxNjUwMjI3MDU1LCJleHAiOjE2NTAyMjczNTV9.gHurwROMC5eabT5ioH3WiSeffYGXUB2a4vk3fxj23AvdJUGXMlpocAgeqpLqcx8gywUajxDgi461v1sdYdgSsQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"languages\": {\r\n        \"Arabic\": \"ar\",\r\n        \"Chinese\": \"zh\",\r\n        \"Dutch\": \"nl\",\r\n        \"English\": \"en\",\r\n        \"Finnish\": \"fi\",\r\n        \"French\": \"fr\",\r\n        \"German\": \"de\",\r\n        \"Hindi\": \"hi\",\r\n        \"Italian\": \"it\",\r\n        \"Japanese\": \"ja\",\r\n        \"Korean\": \"ko\",\r\n        \"Malay\": \"msa\",\r\n        \"Portuguese\": \"pt\",\r\n        \"Russian\": \"ru\",\r\n        \"Spanish\": \"es\",\r\n        \"Vietnamise\": \"vi\"\r\n    },\r\n    \"description\": \"available languages followed by query code\",\r\n    \"status\": \"ok\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/news?keyword=Amazon&language=fr",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"news"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "Amazon"
+						},
+						{
+							"key": "language",
+							"value": "fr"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "userDelete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiYXV0aCI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaWF0IjoxNjUwMjI1NDMwLCJleHAiOjE2NTAyMjU3MzB9.AzH7NNVpiuoszLB3dNLKyreweCVkeIg7vjVBamTrJi-Mc2CcBEfgAz9S7oMFAXbGsC5CGbQS-cDSaGajLDAiPw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/user/user",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "userDetails",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiYXV0aCI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaWF0IjoxNjUwMjI2NDEwLCJleHAiOjE2NTAyMjY3MTB9.rF57x9bZDEZEEP2PeAwhNngILjQp_JFfK5gzj34djqq9YMV-f6xizRmxpZNwgHjypfnAM-0_X-eCqUpsfayNJg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/user/user",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"user\",\r\n    \"email\": \"user@gmail.com\",\r\n    \"password\": \"parolagrea\",\r\n    \"roles\": [\r\n        \"ROLE_ADMIN\"\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/user/signup",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/user/login?username=user&password=parolagrea",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"login"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "user"
+						},
+						{
+							"key": "password",
+							"value": "parolagrea"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

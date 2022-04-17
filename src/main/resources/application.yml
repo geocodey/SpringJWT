@@ -1,0 +1,59 @@
+# the name of the current app
+spring:
+  application:
+    name: spring-boot-storz
+
+  # indent the returned JSON responses
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+  sql:
+    init:
+      platform: h2
+      mode: embedded
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:storz;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: pwx
+    password: pwx
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        show_sql: false
+        format_sql: true
+
+    open-in-view: false
+  cache:
+    cache-names: forecast
+    caffeine:
+      duration: 2   #value in minutes
+security:
+  jwt:
+    token:
+      secret-key: secret-key
+      expire-length: 300000
+currentsapi:
+  token: mn_4I7HXyHgmfCAfQHbCyodDfB8dOfCFRXr88Wf2SytjcwNI
+  url:
+    search: https://api.currentsapi.services/v1/search
+    language: https://api.currentsapi.services/v1/available/languages
+
+# logging settings
+logging:
+  level:
+    root: info
+    com:
+      zaxxer: warn
+    org:
+      apache: warn
+      # to see the query parameters - change 'sql' to 'debug' and 'type' to 'trace'
+      hibernate: warn
+        # sql: warn
+        # type: warn
+      springframework: warn
+
+  pattern:
+    console: '%clr([%date{HH:mm:ss.SSS}]){faint} %clr(%2p) %clr(%-40.40logger{36}){cyan} %m%n%wex'
